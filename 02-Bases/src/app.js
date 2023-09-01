@@ -20,17 +20,20 @@ getUserById(2, (error, user) => {
 })
 
 const { builMakePerson } = require('./js-foundation/05-factory')
-const { getAge, getUuidv4 } = require('./plugins/index')
+const { getAge, getUuidv4, buildLogger } = require('./plugins/index')
 
 builMakePerson(getAge, getUuidv4)
 
 
 const { getPokemonById, getPokemonById2 } = require('./js-foundation/06-promises')
 
-getPokemonById(151).then((pokemon) => {
+getPokemonById(1).then((pokemon) => {
     console.log(pokemon.name)
 });
 
-getPokemonById2(15).then((pokemon) => {
+getPokemonById2(150).then((pokemon) => {
     console.log(pokemon.name)
 });
+
+const logger = buildLogger('app.js');
+logger.log('hola mundo')

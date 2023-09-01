@@ -12,9 +12,8 @@ const fetchApiClientPlugin = {
 const AxiosClientPlugin = {
 
     get: async (url) => {
-
-        return await axios.get(url)
-
+        const resp = await axios.get(url)
+        return resp.data;
     }
 }
 
